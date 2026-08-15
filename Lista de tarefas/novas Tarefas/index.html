@@ -7,14 +7,25 @@
     <title>Lista de Tarefas</title>
 </head>
 <body>
+    
   <h1>TAREFAS SAZONAIS</h1>
-    <p>
-        <label for="tarefasM">Adicionar Tarefa:</label>
-        <input type="text" name="tarefasMes" id="tarefasMes" placeholder="Adicone uma Empresa...">
-        <input type="button" value="Adicionar" onclick="adicionarSazonais()">
-    </p>
+ <div class="form-container">
+    <div class="linha-inputs">
+        <label for="dataTarefa">Data:</label>
+        <input type="date" id="dataTarefa">
 
-    <ul id="listaTarefas"><li></li></ul>
+        <label for="vencimentoTarefa">Vencimento:</label>
+        <input type="date" id="vencimentoTarefa">
+    </div>
+
+    <div class="linha-inputs">
+        <label for="tarefasMes">Adicionar Tarefa:</label>
+        <input type="text" name="tarefasMes" id="tarefasMes" placeholder="Adicione uma Tarefa...">
+        <input type="button" value="Adicionar" onclick="adicionarSazonais()">
+    </div>
+</div>
+
+    <div id="listaTarefas"></div>
 
 <script src="script.js"></script>   
 </body>
