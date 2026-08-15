@@ -33,7 +33,7 @@ function adicionarSazonais(){
                 item.classList.toggle('concluidp')
              }  
              
-                 item.appendChild(botaoConcluido)
+                 item.appendChild(botaoConcluido)     
      
 
 
