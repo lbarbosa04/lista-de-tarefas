@@ -1,33 +1,53 @@
+
 function adicionar() {
+
     const inputTarefas = document.getElementById('tarefas')
     const lista = document.getElementById('listaTarefas')
 
     const texto = inputTarefas.value.trim()
 
     if (texto === "") {
-        inputTarefas.innerHTML ="Digite uma tarefa antes de adicionar!"
+        alert("Digite uma tarefa antes de adicionar!")
         return
     }
 
-    // Cria o novo item <li>
     const item = document.createElement('li')
     item.textContent = texto
 
-    // Cria o botão de apagar
     const botaoApagar = document.createElement('button')
     botaoApagar.textContent = "Apagar"
+    
+ botaoApagar.style.backgroundColor = "#e74c3c"
+ botaoApagar.style.color = "white"
+ botaoApagar.style.border = "none"
+ botaoApagar.style.padding = "5px 10px"
+ botaoApagar.style.borderRadius = "4px"
+ botaoApagar.style.cursor = "pointer"
 
-    // Quando clicar no botão, remove o <li> pai dele
     botaoApagar.onclick = function() {
         item.remove()
     }
 
-    // Coloca o botão dentro do item
     item.appendChild(botaoApagar)
 
-    // Adiciona o item na lista
+
     lista.appendChild(item)
 
-    // Limpa o campo de texto
+    const concluido = document.createElement("button")
+    concluido.textContent = "Concluido"
+
+ concluido.style.backgroundColor = "#e74c3c"
+ concluido.style.color = "white"
+ concluido.style.border = "none"
+ concluido.style.padding = "5px 10px"
+ concluido.style.borderRadius = "4px"
+ concluido.style.cursor = "pointer"
+   
+    concluido.onclick = function(){
+        item.classList.toggle('concluido')
+    }
+    
+    item.appendChild(concluido)
+
     inputTarefas.value = ""
 }
