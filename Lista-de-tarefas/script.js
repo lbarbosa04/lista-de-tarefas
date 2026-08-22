@@ -2,7 +2,7 @@ function adicionarSazonais() {
 
     const hoje = new Date()
 
-    const dia = String(hoje.getDate()).padStart(2, '0')      // também precisa de padStart
+    const dia = String(hoje.getDate()).padStart(2, '0')   //padStart informa a data com dois numeros
     const mes = String(hoje.getMonth() + 1).padStart(2, '0')
     const ano = hoje.getFullYear()
 
@@ -52,12 +52,12 @@ function adicionarSazonais() {
 
     const badgeVencimento = document.createElement('small')
     badgeVencimento.textContent = `(Vence em: ${vencFormatado})`
-    badgeVencimento.classList.add('vencimento-tag') // Dar o style no CSS
+    badgeVencimento.classList.add('vencimento-tag') //Style no CSS
     item.appendChild(badgeVencimento)
 
     const botaoApagar = document.createElement('button')
     botaoApagar.textContent = "Apagar"
-    botaoApagar.classList.add('botao-apagar')
+    botaoApagar.classList.add('botao-apagar') //Style no CSS
     botaoApagar.onclick = function () {
         item.remove()
         if (ulDoDia.children.length === 0) {
@@ -67,7 +67,7 @@ function adicionarSazonais() {
 
     const botaoConcluido = document.createElement('button')
     botaoConcluido.textContent = "Concluido"
-    botaoConcluido.classList.add('botao-concluido')
+    botaoConcluido.classList.add('botao-concluido') //Style no CSS
     botaoConcluido.onclick = function () {
         item.classList.toggle('concluido')
     }
