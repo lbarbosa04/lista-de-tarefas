@@ -27,34 +27,29 @@ h1 {
     text-align: center;
 }
 
-/* Área de inserção (Formulário) */
-.form-container {
+/* Área de inserção (Formulário)
+   Obs: o HTML não tem uma div .form-container separada -
+   o formulário inteiro é a própria .linha-inputs. Por isso o
+   estilo de "painel" (fundo, padding, sombra, borda) foi
+   aplicado direto aqui, e não numa classe que não existe. */
+.linha-inputs {
     background-color: #1E1E1E;
     padding: 24px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-width: 800px;
-    width: 100%;
-    margin-bottom: 30px;
     border: 1px solid #2C2C2C;
-}
-
-/* Linhas organizadas do formulário */
-.linha-inputs {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    max-width: 1000px;
     width: 100%;
+    margin-bottom: 30px;
 }
 
-/* Altere para o tamanho desejado em pixels */
 #tarefasMes {
-    width: 350px; 
+    width: 350px;
 }
 
 label {
@@ -80,6 +75,13 @@ input[type="date"]:focus {
     border-color: #888888;
 }
 
+/* Ícone do calendário do input de data:
+   por padrão vem preto e fica quase invisível no fundo escuro */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
 input[type="button"] {
     background-color: #FFFFFF;
     color: #121212;
@@ -102,7 +104,7 @@ input[type="button"]:active {
 /* Container que engloba os blocos de dias */
 #listaTarefas {
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -159,10 +161,10 @@ details.bloco-dia li span {
 
 /* Tag de data de vencimento */
 .vencimento-tag {
-    color: #A0A0A0;
+    color: #90CDF4;
     font-size: 0.8rem;
-    background-color: #333333;
-    padding: 4px 8px;
+    background-color: #1A365D;
+    padding: 6px 8px;
     border-radius: 4px;
     white-space: nowrap;
 }
@@ -200,4 +202,16 @@ button:hover {
 .botao-concluido {
     background-color: #14532d;
     color: #86efac;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+    .linha-inputs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #tarefasMes {
+        width: 100%;
+    }
 }

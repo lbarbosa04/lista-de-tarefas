@@ -8,22 +8,18 @@
 </head>
 <body>
     
-  <h1>TAREFAS SAZONAIS</h1>
- <div class="form-container">
-    <div class="linha-inputs">
-        <label for="dataTarefa">Data:</label>
-        <input type="date" id="dataTarefa">
+ <h1>Lista de Tarefas</h1>
 
-        <label for="vencimentoTarefa">Vencimento:</label>
-        <input type="date" id="vencimentoTarefa">
-    </div>
-
+ 
     <div class="linha-inputs">
         <label for="tarefasMes">Adicionar Tarefa:</label>
         <input type="text" name="tarefasMes" id="tarefasMes" placeholder="Adicione uma Tarefa...">
+
+        <label for="vencimentoTarefa">Vencimento:</label>
+        <input type="date" id="vencimentoTarefa" min="2026-01-01" max="2099-12-31">
         <input type="button" value="Adicionar" onclick="adicionarSazonais()">
     </div>
-</div>
+
 
     <div id="listaTarefas"></div>
 
